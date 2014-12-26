@@ -1,0 +1,21 @@
+<%= form_for @bike do |f| %>
+	<div id="form-group">
+		<%= f.label :brand %>
+		<%= f.text_field :brand %>
+	</div>
+	<div id="form-group">
+		<%= f.label :category %>
+		<%= f.text_field :category %>
+	</div>
+	<div id="form-group">
+		<%= f.label :description %>
+		<%= f.text_area :description, size: "60x12" %>
+	</div>
+	<div id="form-group">
+		<%= f.label :year_made %>
+		<%= f.text_field :year_made %>
+	</div>
+	<div id="form-group">
+		<%= f.submit %>
+	</div>
+<% end %>

@@ -1,2 +1,17 @@
-<h1>Bikes#index</h1>
-<p>Find me in app/views/bikes/index.html.erb</p>
+<h1>All Bikes</h1>
+
+<% @bikes.each do |bike| %>
+	<ul>
+		<li><%= bike.brand %></li>
+		<li><%= bike.category %></li>
+		<li><%= bike.description %></li>
+		<li><%= bike.year_made %></li>
+		<li>
+			<%= link_to 'Edit', edit_bike_path(bike) %> | 
+			<%= link_to 'Destroy', bike_path(bike),
+              method: :delete,
+              data: { confirm: 'Are you sure?' } %></td>
+		</li>
+	</ul>
+
+	<% end %>
