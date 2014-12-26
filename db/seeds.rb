@@ -10,3 +10,4 @@
 # Users
 
 # Bike
+Bike.create(brand: 'Shimano', category: 'Sports Bike', description: 'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Totam possimus aspernatur, facilis enim aliquam inventore ad officiis, a velit illum dolore cumque nesciunt eaque! Error, sed officiis fugit deserunt tempora.', year_made: 2009)
