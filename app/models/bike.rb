@@ -9,6 +9,9 @@
 #  year_made   :integer
 #  created_at  :datetime
 #  updated_at  :datetime
+#  latitude    :float
+#  longitude   :float
+#  address     :string(255)
 #
 
 class Bike < ActiveRecord::Base

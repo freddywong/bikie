@@ -1,21 +1,41 @@
 <h1>All Bikes</h1>
 
 <div style='width: 800px;'>
-  <div id="map" style='width: 800px; height: 400px;'></div>
+	<div id="map" style='width: 800px; height: 400px;'></div>
 </div>
 
-<% @bikes.each do |bike| %>
-	<ul>
-		<li><%= bike.brand %></li>
-		<li><%= bike.category %></li>
-		<li><%= bike.description %></li>
-		<li><%= bike.year_made %></li>
-		<li>
-			<%= link_to 'Edit', edit_bike_path(bike) %> | 
-			<%= link_to 'Destroy', bike_path(bike),
-              method: :delete,
-              data: { confirm: 'Are you sure?' } %></td>
-		</li>
-	</ul>
+<script type="text/javascript">
+	handler = Gmaps.build('Google');
+	handler.buildMap({ provider: {}, internal: {id: 'map'}}, function(){
+		markers = handler.addMarkers([
+		{
+			"lat": 0,
+			"lng": 0,
+			"picture": {
+				"url": "https://addons.cdn.mozilla.net/img/uploads/addon_icons/13/13028-64.png",
+				"width":  36,
+				"height": 36
+			},
+			"infowindow": "hello!"
+		}
+		]);
+		handler.bounds.extendWith(markers);
+		handler.fitMapToBounds();
+	});
+</script>
 
-	<% end %>
+<% @bikes.each do |bike| %>
+<ul>
+	<li><%= bike.brand %></li>
+	<li><%= bike.category %></li>
+	<li><%= bike.description %></li>
+	<li><%= bike.year_made %></li>
+	<li>
+		<%= link_to 'Edit', edit_bike_path(bike) %> | 
+		<%= link_to 'Destroy', bike_path(bike),
+		method: :delete,
+		data: { confirm: 'Are you sure?' } %></td>
+	</li>
+</ul>
+
+<% end %>
