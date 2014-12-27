@@ -4,6 +4,7 @@ class BikesController < ApplicationController
 		@hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
 			marker.lat bike.latitude
 			marker.lng bike.longitude
+			marker.infowindow bike.description
 	end
 	end
 
