@@ -4,8 +4,13 @@ class BikesController < ApplicationController
 		@hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
 			marker.lat bike.latitude
 			marker.lng bike.longitude
-			marker.infowindow bike.description
+			marker.infowindow render_to_string(:partial => "/bikes/infowindow", :locals => { :bike => bike})
+		end
+
 	end
+
+	def show
+		@bike = Bike.find params[:id]
 	end
 
 	def new

@@ -1,0 +1,15 @@
+<ul>
+	<li><%= @bike.brand %></li>
+	<li><%= @bike.category %></li>
+	<li><%= @bike.description %></li>
+	<li><%= @bike.year_made %></li>
+	<li><%= @bike.latitude %></li>
+	<li><%= @bike.longitude %></li>
+	<li><%= @bike.address %></li>
+	<li>
+		<%= link_to 'Edit', edit_bike_path(@bike) %> | 
+		<%= link_to 'Destroy', bike_path(@bike),
+		method: :delete,
+		data: { confirm: 'Are you sure?' } %></td>
+	</li>
+</ul>
