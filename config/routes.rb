@@ -38,7 +38,7 @@
 
 Rails.application.routes.draw do
 
-  root 'bikes#index'
+  root 'welcome#index'
   resources :bikes
   resources :users
 
