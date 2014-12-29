@@ -1,4 +1,5 @@
 class BikesController < ApplicationController
+	layout 'app'
 	def index
 		@bikes = Bike.all
 		@hash = Gmaps4rails.build_markers(@bikes) do |bike, marker|
