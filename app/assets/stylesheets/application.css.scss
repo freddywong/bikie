@@ -31,14 +31,27 @@
 
 
  html,
- body {
+ body.welcome-page {
  	height: 100%;
+
+ }  
+ body.welcome-page {
  	background-image: image-url('bike-cover.jpg');
  	background-repeat: no-repeat;
 	background-size: 100%;
- }  
- body {
  	color: #fff;
+ 	text-align: center;
+ 	text-shadow: 0 1px 3px rgba(0,0,0,.5);
+ }
+
+ html,
+ body.bikes-page {
+ 	height: 100%;
+
+ }  
+ body.bikes-page {
+ 	background:#fff;
+ 	color: #333;
  	text-align: center;
  	text-shadow: 0 1px 3px rgba(0,0,0,.5);
  }
